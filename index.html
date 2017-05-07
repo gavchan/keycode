@@ -5,18 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
     href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-nord.min.css">
+    <style type="text/css">
+        h1,#out {
+            text-align: center;
+        }
+       #out {
+           line-height: 10em;
+           font-size: 1.5em;
+       }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Keycode</h1>
-        <div class="out">
-            <p>Press a key to get its keycode</p>
+        <div id="out">
+            Press a key to get its keycode
         </div>
     </div>
-
     <script>
         window.addEventListener('keydown', function(e) {
-            console.log(e.keyCode);
+            document.getElementById('out').innerHTML = "&quot;" + e.key + "&quot; = " + e.keyCode;
+            console.log(e);
         });
     </script>
 </body>
